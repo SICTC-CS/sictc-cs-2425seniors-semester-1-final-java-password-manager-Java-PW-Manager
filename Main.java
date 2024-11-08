@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.FileNotFoundException; 
 
 public class Main{
+    private static ArrayList passwords = new ArrayList();
+    private static ArrayList users = new ArrayList();
     public static void main(String[] args) throws IOException {
         Scanner ui= new Scanner(System.in);
         String str = read();
