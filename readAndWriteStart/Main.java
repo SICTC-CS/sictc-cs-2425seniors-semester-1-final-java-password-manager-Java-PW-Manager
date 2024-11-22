@@ -11,9 +11,11 @@ public class Main{
     public static void main(String[] args) throws IOException {
         Scanner ui= new Scanner(System.in);
         String str = read();
-        String newPass = ui.nextLine();
-        String newUser = ui.nextLine();
-        str = write(str,newPass,newUser);
+        //String newPass = ui.nextLine();
+        //String newUser = ui.nextLine();
+        //str = write(str,newPass,newUser);
+        System.out.println();
+        System.out.println(getLine(str,3));
         
     }
 
@@ -44,11 +46,6 @@ public class Main{
 
         // check if File exists or not 
         FileReader fr = new FileReader("Accounts.txt"); 
-        try{ 
-            fr = new FileReader("Accounts.txt"); 
-        }catch(FileNotFoundException fe){ 
-            System.out.println("File not found"); 
-        } 
   
         // read from FileReader till the end of file 
         while ((ch=fr.read())!=-1){ 
@@ -59,4 +56,11 @@ public class Main{
         fr.close(); 
         return str;
     } 
+    private static String getLine(String input, int line) {
+        String[] arrOfstr = input.split("\n");
+        if (arrOfstr.length >= line)
+            return arrOfstr[line - 1];
+        return "";
+    }
+
 }
